@@ -1,5 +1,8 @@
-package OOP_s1.Products;
+package OOP_s1;
 
+import OOP_s1.Products.BottleOfWater;
+import OOP_s1.Products.HotDrink;
+import OOP_s1.Products.Product;
 import OOP_s1.VendingMachines.VendingMachine;
 
 public class App {
