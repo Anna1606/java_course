@@ -4,7 +4,7 @@ import java.util.Iterator;
 import java.util.List;
 
 /**
- * Класс перечислитель студентов в группе
+ * Класс итератор студентов в группе
  */
 public class StudentGroupIterator implements Iterator<Student> {
     /**

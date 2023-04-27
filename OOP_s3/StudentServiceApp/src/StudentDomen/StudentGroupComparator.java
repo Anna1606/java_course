@@ -1,7 +1,7 @@
 package StudentDomen;
 
 import java.util.Comparator;
-
+/** Класс Сравнение групп по номеру группы */
 public class StudentGroupComparator implements Comparator<StudentGroup> {
 
     @Override

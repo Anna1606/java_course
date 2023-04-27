@@ -2,10 +2,18 @@ package StudentDomen;
 
 import java.util.Iterator;
 import java.util.List;
-
+/** Класс Группа студентов */
 public class StudentGroup implements Iterable<Student>, Comparable<StudentGroup>{
+    /** Список студентов */
     private List<Student> students;
+    /** Номер группы студентов */
     private int igroup;
+
+    /**
+     * Конструктор класса Группа студентов
+     * @param students Список студентов
+     * @param igroup Номер группы
+     */
 
     public StudentGroup(List<Student> students, int igroup) {
         this.students = students;
@@ -58,12 +66,13 @@ public class StudentGroup implements Iterable<Student>, Comparable<StudentGroup>
             }
         };
     }
+    /** Переопределение метода печати */
     @Override
     public String toString(){
         return "\nGroup №: " + igroup + ", " + students.size() + " students,"
                 +  students.stream().toList();
     }
-
+    /** Переопределение метода сортировки */
     @Override
     public int compareTo(StudentGroup o) {
         if (this.students.size() == o.getStudents().size()){

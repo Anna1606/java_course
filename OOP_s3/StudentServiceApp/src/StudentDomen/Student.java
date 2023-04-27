@@ -1,7 +1,20 @@
 package StudentDomen;
 
+/**
+ * Класс Студент, включающий интерфейс сортировки
+ */
 public class Student extends User implements Comparable<Student>{
+    /** id студента */
     private int studentId;
+
+    /**
+     * Конструктор класса Student
+     * @param studentId индивидуальный номер студента
+     * @param surname Фамилия студента
+     * @param name Имя студента
+     * @param fatherName Отчество студента
+     * @param age Возраст студента
+     */
     public Student(int studentId, String surname, String name, String fatherName, int age) {
         super(surname, name, fatherName, age);
         this.studentId = studentId;
@@ -14,13 +27,14 @@ public class Student extends User implements Comparable<Student>{
     public void setStudentId(int studentId) {
         this.studentId = studentId;
     }
+    /** Переопределения метода печати */
     @Override
     public String toString(){
         return "\nStudent: " + studentId+ ", " + super.getSurname() + " " +
                 super.getName() + " " + super.getFatherName() + ", " +
                 super.getAge() + " лет";
     }
-
+    /** Переопределение метода сортировки */
     @Override
     public int compareTo(Student o) {
         if (super.getAge() == o.getAge()){
