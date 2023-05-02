@@ -1,7 +1,7 @@
 package StudentDomen;
 
 /**
- * Абстрактный класс пользователя
+ * Абстрактный (обобщенный) класс пользователя
  */
 public class User {
     /** Фамилия */
@@ -26,33 +26,40 @@ public class User {
         this.fatherName = fatherName;
         this.age = age;
     }
-
+    /** Получить Фамилию пользователя */
     public String getSurname() {
         return surname;
     }
+    /** Добавить Фамилию пользователя */
     public void setSurname(String surname) {
         this.surname = surname;
     }
+    /** Получить имя пользователя */
     public String getName() {
         return name;
     }
+    /** Добавить имя пользователя */
     public void setName(String name) {
         this.name = name;
     }
+    /** Получить отчество пользователя */
     public String getFatherName() {
         return fatherName;
     }
+    /** Добавить отчество пользователя */
     public void setFatherName(String fatherName) {
         this.fatherName = fatherName;
     }
+    /** Получить возраст пользователя */
     public int getAge() {
         return age;
     }
+    /** Добавить возраст пользователя */
     public void setAge(int age) {
         this.age = age;
     }
 
-    /** Переопределение метода toString */
+    /** Переопределение метода печати */
     @Override
     public String toString(){
         return "Person: " + surname + " " +

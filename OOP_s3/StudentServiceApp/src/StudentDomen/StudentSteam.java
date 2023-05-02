@@ -18,19 +18,19 @@ public class StudentSteam implements Iterable<StudentGroup>{
         this.course = course;
         this.numOfSteam = numOfSteam;
     }
-
+    /** Получить список групп студентов в потоке*/
     public List<StudentGroup> getCourse() {
         return course;
     }
-
+    /** Добавить список групп студентов */
     public void setCourse(List<StudentGroup> course) {
         this.course = course;
     }
-
+    /** Получить номер потока */
     public int getNumOfSteam() {
         return numOfSteam;
     }
-
+    /** Добавить номер потока */
     public void setNumOfSteam(int numOfSteam) {
         this.numOfSteam = numOfSteam;
     }
@@ -39,12 +39,16 @@ public class StudentSteam implements Iterable<StudentGroup>{
     public Iterator<StudentGroup> iterator() {
         return new Iterator<StudentGroup>() {
             private int counter;
-
+            /** Проверка на конец списка */
             @Override
             public boolean hasNext() {
                 return counter < course.size();
             }
 
+            /**
+             * Вернуть студентов курса из списка по порядку, до тех пор, пока не кончится список
+             * @return
+             */
             @Override
             public StudentGroup next() {
                 if (!hasNext()) {

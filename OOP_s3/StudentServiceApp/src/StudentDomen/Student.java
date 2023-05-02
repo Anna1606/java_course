@@ -19,11 +19,11 @@ public class Student extends User implements Comparable<Student>{
         super(surname, name, fatherName, age);
         this.studentId = studentId;
     }
-
+    /** Получить уникальный номер студента */
     public int getStudentId() {
         return studentId;
     }
-
+    /** Добавить уникальный номер студента */
     public void setStudentId(int studentId) {
         this.studentId = studentId;
     }
@@ -34,7 +34,8 @@ public class Student extends User implements Comparable<Student>{
                 super.getName() + " " + super.getFatherName() + ", " +
                 super.getAge() + " лет";
     }
-    /** Переопределение метода сортировки */
+    /** Переопределение метода сортировки
+     * для сортировки по возрасту, а затем по индивидуальному номеру студента */
     @Override
     public int compareTo(Student o) {
         if (super.getAge() == o.getAge()){

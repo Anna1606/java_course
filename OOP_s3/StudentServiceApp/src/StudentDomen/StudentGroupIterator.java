@@ -8,13 +8,18 @@ import java.util.List;
  */
 public class StudentGroupIterator implements Iterator<Student> {
     /**
-     * Счетчик
+     * Счетчик списка студентов
      */
     private int counter;
     /**
      * Список студентов
      */
     private final List<Student> students;
+
+    /**
+     * Конструктор итератора студентов
+     * @param students список студентов
+     */
 
     public StudentGroupIterator(List<Student> students) {
         this.students = students;
@@ -23,13 +28,17 @@ public class StudentGroupIterator implements Iterator<Student> {
 
     /**
      * Проверка на конец списка
-     * @return true, если есть следующий студент в списке
+     * @return если есть следующий студент в списке, продолжать идти по списку
      */
     @Override
     public boolean hasNext() {
         return counter < students.size();
     }
 
+    /**
+     * Вернуть студента из списка по порядку, до тех пор, пока не кончится список
+     * @return
+     */
     @Override
     public Student next() {
         if (!hasNext()){
