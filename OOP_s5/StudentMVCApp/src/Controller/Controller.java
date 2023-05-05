@@ -36,6 +36,10 @@ public class Controller {
         this.model = model;
     }
 
+    /**
+     * Метод выбора пользователем варианта хранения данных
+     * @return вернет выбранный вариант
+     */
     public iGetModel getModel(){
         Scanner in = new Scanner(System.in);
         int choose = 0;
@@ -53,6 +57,11 @@ public class Controller {
             }
         }return chooseModel;
     }
+
+    /**
+     * Метод выбора пользователем варианта отображения данных
+     * @return вернет выбранный вариант или установит стандартный
+     */
     public iGetView getView(){
         Scanner in = new Scanner(System.in);
         System.out.println("Choose language: \n" +
@@ -73,11 +82,18 @@ public class Controller {
         }
     }
 
+    /**
+     * Метод получения списка всех студентов
+     */
     public void getAllStudents(){
 //        students = model.getAllStudent();
         students = chooseModel.getAllStudent();
     }
 
+    /**
+     * Метод проверки на пустоту хранилища данных
+     * @return
+     */
     public boolean testData(){
         if(students.size() > 0){
             return  true;
@@ -103,16 +119,16 @@ public class Controller {
         //view.printAllStudent(model.getAllStudent());
     }
 
+    /**
+     * Метод запуска приложения
+     */
     public void run() {
         Scanner in = new Scanner(System.in);
-//        System.out.println("Choose language / выберете язык:\n" +
-//                "Русский - введите цифру 1\n" +
-//                "English - put number 2\n");
-//        int n = in.nextInt();
-//        if (n == 1 || n == 2) {
         chooseView = getView();
         chooseModel = getModel();
+        // Объявление переменной со списком возможных комманд для работы с данными
         Commands com = Commands.NONE;
+        // проверка на существование новой команды
         boolean getNewIteration = true;
         while (getNewIteration) {
             if (chooseView instanceof View) {
